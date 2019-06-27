@@ -9,7 +9,7 @@ css_files = style
 all: $(foreach f,$(css_files),$(css)/$(f).css)
 
 $(css)/%.css: $(sass)/%.sass
-	sass -C $< $@ --style compact
+	sass $< $@ --style=compressed
 
 .phony: clean
 clean:

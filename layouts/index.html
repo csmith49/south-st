@@ -43,6 +43,29 @@
                         <a href="/publication/">All publications</a>
                     {{ end }}
                 </section>
+
+                <section id="workshops">
+                    {{ $workshops := (where .Site.RegularPages "Section" "==" "workshop") }}
+                    {{ $workshopsCount := len $workshops }}
+            
+                    {{ if lt $workshopsCount 6 }}
+                        <h2>Workshops</h2>
+                        <ul>
+                            {{ range $workshops }}
+                                {{ .Render "li" }}
+                            {{ end }}
+                        </ul>
+                    {{ else }}
+                        {{ $selectedWorkshops := where $workshops ".Params.selected" true }}
+                        <h2>Selected Workshop Talks</h2>
+                        <ul>
+                            {{ range first 5 $selectedWorkshops }}
+                                {{ .Render "li" }}
+                            {{ end }}
+                        </ul>
+                        <a href="/workshops/">All workshops</a>
+                    {{ end }}
+                </section>
         </div>
     </div>
 {{ end }}
