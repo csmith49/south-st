@@ -1,8 +1,8 @@
-name = "randall"
+name = "south-st"
 license = "MIT"
-licenselink = "https://github.com/csmith49/randall/blob/master/LICENSE.md"
+licenselink = "https://github.com/csmith49/south-st/blob/master/LICENSE.md"
 description = "Simple theme for personal academic website."
-homepage = "http://github.com/csmith49/randall"
+homepage = "http://github.com/csmith49/south-st"
 tags = ["", ""]
 features = ["", ""]
 min_version = 0.17
