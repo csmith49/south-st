@@ -1,0 +1,106 @@
+@import "fonts"
+@import "mixins"
+@import "constants"
+
+body
+    background-color: $bg-color
+
+.header
+    display: flex
+    align-items: center
+    flex-grow: row
+    justify-content: space-between
+
+    // color: #fff
+
+    .headshot img
+        width: 100px
+        border-radius: 50px
+        border: 1px $line-color solid
+
+    .contact
+        margin-left: $default-spacing
+
+    h1
+        font-family: $header-font
+        font-weight: lighter
+
+.container
+    max-width: 500px
+    margin: auto
+    font-family: $body-font
+    color: $font-color
+
+.navbar
+    display: none
+
+.content
+    p
+        margin-left: $default-spacing
+
+    h2
+        +line-after($default-spacing, .65em, $line-color)
+        font-family: $header-font
+        font-weight: lighter
+
+    // styling the publication list, as appropriate
+    #publications
+        
+        // no formatting on the list, and add spacing between each
+        ul
+            padding-left: 0px
+            margin-left: $default-spacing
+            list-style-type: none
+            li:not(:last-child)
+                margin-bottom: $default-spacing
+
+        // title is a link, but needs to look better
+        .title
+            a
+                text-decoration: none
+                color: $link-color
+            a:hover
+                text-decoration: underline
+
+        // most other things are italicized or deemphasized somehow
+        .authors
+            font-weight: lighter
+            font-style: italic
+        
+        .location
+            font-weight: lighter
+            font-style: italic
+
+        .awards
+            font-weight: lighter
+            // font-style: italic
+
+//     font-family: $body-font
+
+//     p
+//         margin-left: 10px
+
+//     h1
+//         font-family: $header-font
+//         font-style: italic
+//         // font-weight: normal
+    
+//     h2
+//         +line-after(10px, .65em)
+//         font-family: $header-font
+//         font-style: italic
+    
+//     ul
+//         list-style-type: none
+//         padding-left: 0px
+//         margin-left: 10px
+
+//         li:not(:last-child)
+//             margin-bottom: 10px
+    
+//     a
+//         text-decoration: none
+
+// .headshot
+//     img
+//         max-width: 170px

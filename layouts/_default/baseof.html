@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+        <!-- css includes -->
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        {{ block "main" . }}
+            <!-- main content goes here -->
+        {{ end }}
+    </body>
+</html>

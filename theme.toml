@@ -1,0 +1,12 @@
+name = "randall"
+license = "MIT"
+licenselink = "https://github.com/csmith49/randall/blob/master/LICENSE.md"
+description = "Simple theme for personal academic website."
+homepage = "http://github.com/csmith49/randall"
+tags = ["", ""]
+features = ["", ""]
+min_version = 0.17
+
+[author]
+    name = "Calvin Smith"
+    homepage = "http://pages.cs.wisc.edu/~cjsmith"

@@ -1,0 +1,48 @@
+{{ define "main" }}
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>{{ .Params.name }}</h1>
+                <div class="contact">
+                    <p>
+                            {{ .Params.position }} <br>
+                            {{ .Params.affiliation }} <br>
+                            {{ .Params.email }} <br>
+                    </p>
+                </div>        
+            </div>
+            <div class="headshot">
+                <img src="/images/headshot.jpg" alt="Calvin Smith">
+            </div>
+        </div>
+        <div class="content">
+            <section id="about">
+                    <h2>About</h2>
+                    {{ .Content }}
+                </section>
+            
+                <section id="publications">
+                    {{ $publications := (where .Site.RegularPages "Section" "==" "publication") }}
+                    {{ $publicationsCount := len $publications }}
+            
+                    {{ if lt $publicationsCount 6 }}
+                        <h2>Publications</h2>
+                        <ul>
+                            {{ range $publications }}
+                                {{ .Render "li" }}
+                            {{ end }}
+                        </ul>
+                    {{ else }}
+                        {{ $selectedPublications := where $publications ".Params.selected" true }}
+                        <h2>Selected Publications</h2>
+                        <ul>
+                            {{ range first 5 $selectedPublications }}
+                                {{ .Render "li" }}
+                            {{ end }}
+                        </ul>
+                        <a href="/publication/">All publications</a>
+                    {{ end }}
+                </section>
+        </div>
+    </div>
+{{ end }}

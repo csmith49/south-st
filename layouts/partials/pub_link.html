@@ -1,0 +1,9 @@
+<!-- macro for looking up whether we should use a local link or not -->
+{{ $link := print "/papers/" .Params.reference ".pdf" }}
+{{ $staticLink := print "static/" $link }}
+
+{{ if and (fileExists $staticLink) (eq .Params.local_pdf true) -}}
+    <a href="{{ $link }}">{{ .Params.title }}</a>
+{{ else }}
+    <a href="{{ .Params.url_pdf }}">{{ .Params.title }}</a>
+{{- end }}
