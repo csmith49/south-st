@@ -1,0 +1,9 @@
+<!-- macro for rendering code and video links, if provided -->
+
+{{ with .Params.url_code }}
+    <a href="{{ . }}"><i class="fab fa-github"></i></a>
+{{ end }}
+
+{{ with .Params.url_video }}
+    <a href="{{ . }}"><i class="fab fa-youtube"></i></a>
+{{ end }}

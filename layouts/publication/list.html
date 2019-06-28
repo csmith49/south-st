@@ -1,8 +1,0 @@
-{{ define "main" }}
-    <h2>All Publications</h2>
-    <ul>
-        {{ range (where .Data.Pages "Section" "publication") }}
-            {{ .Render "li" }}
-        {{ end }}
-    </ul>
-{{ end }}

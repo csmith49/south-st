@@ -24,6 +24,9 @@ body
     h1
         font-family: $header-font
         font-weight: lighter
+        &:before
+            content: "# "
+            color: $link-color
 
 .container
     max-width: 500px
@@ -35,72 +38,63 @@ body
     display: none
 
 .content
+    +clean-link($link-color)
+
     p
         margin-left: $default-spacing
 
     h2
-        +line-after($default-spacing, .65em, $line-color)
+        // +line-after($default-spacing, .65em, $line-color)
+        &:before
+            content: "## "
+            color: $link-color
         font-family: $header-font
         font-weight: lighter
 
-    // styling the publication list, as appropriate
-    #publications
+#about
+    +clean-link($link-color)
+
+// styling the publication list, as appropriate
+#publications
+    // no formatting on the list, and add spacing between each
+    +clean-list($default-spacing)
+
+    // title is a link, but needs to look better
+    .title
+        +clean-link($link-color)
+
+    // most other things are italicized or deemphasized somehow
+    .authors, .location, .at
+        @extend %subtle
+
+    .awards
+        font-weight: lighter
+
+    .resources
+        a:not(:last-child):after
+            content: " | "
+            color: $font-color
+
+// styling the workshop talks list, similar to above
+#workshops
+    // no formatting on list, with space between
+    +clean-list($default-spacing)
+    
+    // clean up title
+    .title
+        +clean-link($link-color)
         
-        // no formatting on the list, and add spacing between each
-        ul
-            padding-left: 0px
-            margin-left: $default-spacing
-            list-style-type: none
-            li:not(:last-child)
-                margin-bottom: $default-spacing
+    .location, .at
+        @extend %subtle
 
-        // title is a link, but needs to look better
-        .title
-            a
-                text-decoration: none
-                color: $link-color
-            a:hover
-                text-decoration: underline
+#community
+    // if there are links, make sure they're clean
+    +clean-link($link-color)
+    +clean-list($default-spacing)
 
-        // most other things are italicized or deemphasized somehow
-        .authors
-            font-weight: lighter
-            font-style: italic
-        
-        .location
-            font-weight: lighter
-            font-style: italic
+    .community_year
+        color: $link-color
 
-        .awards
-            font-weight: lighter
-            // font-style: italic
-
-//     font-family: $body-font
-
-//     p
-//         margin-left: 10px
-
-//     h1
-//         font-family: $header-font
-//         font-style: italic
-//         // font-weight: normal
-    
-//     h2
-//         +line-after(10px, .65em)
-//         font-family: $header-font
-//         font-style: italic
-    
-//     ul
-//         list-style-type: none
-//         padding-left: 0px
-//         margin-left: 10px
-
-//         li:not(:last-child)
-//             margin-bottom: 10px
-    
-//     a
-//         text-decoration: none
-
-// .headshot
-//     img
-//         max-width: 170px
+    .event
+        &:not(:last-child):after
+            content: " | "

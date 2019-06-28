@@ -1,0 +1,7 @@
+<li>
+    <span class="title">{{ partial "pub_link" . }}</span>
+    <span class="at">@</span>
+    <span class="location">{{ partial "pub_location" . }}</span><br>
+    <!-- right after the (short) location, render any links to other resources -->
+    <span class="resources">{{ partial "pub_extra_links" . }}</span>
+</li>

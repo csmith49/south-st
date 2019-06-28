@@ -5,7 +5,8 @@
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
         <!-- css includes -->
         <link rel="stylesheet" href="/css/normalize.css">
-
+        <!-- font icons -->
+        <script src="https://kit.fontawesome.com/0c87beb16c.js"></script>
         <!-- compile sass automatically -->
         {{ $style := resources.Get "sass/style.sass" | toCSS | minify | fingerprint }} 
         <link rel="stylesheet" href="{{ $style.Permalink }}">

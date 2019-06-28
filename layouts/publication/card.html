@@ -1,0 +1,9 @@
+<li>
+    <span class="title">{{ partial "pub_link" . }}</span>
+    <span class="at"> @ </span>
+    <span class="location">{{ partial "pub_location" . }}</span><br>
+    <span class="authors">{{ .Params.authors }}</span><br>
+    <!-- list awards, if we have any -->
+    <span class="awards">{{ delimit .Params.awards " - " }}</span>
+    <!-- <span class="resources">{{ partial "pub_extra_links" . }}</span> -->
+</li>

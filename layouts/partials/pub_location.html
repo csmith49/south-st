@@ -1,0 +1,5 @@
+<!-- macro for constructing the location text for a publication/workshop -->
+{{ $shortDate := .PublishDate.Format "06" }}
+
+<!-- should print out as, e.g., CAV 19 - Computer Aided Verification -->
+{{ .Params.location_short }} {{ $shortDate }}

@@ -8,6 +8,8 @@ role_short = "shorthand for what you did"
 
 date = {{ dateFormat "2006-01-02" .Date }}
 
+link = ""
+
 +++
 
 A brief description of what was involved, if desired.

@@ -2,6 +2,7 @@
 {{ $link := print "/papers/" .Params.reference ".pdf" }}
 {{ $staticLink := print "static/" $link }}
 
+<!-- if the expected file exists, and we want to serve the local pdf, use the local link -->
 {{ if and (fileExists $staticLink) (eq .Params.local_pdf true) -}}
     <a href="{{ $link }}">{{ .Params.title }}</a>
 {{ else }}

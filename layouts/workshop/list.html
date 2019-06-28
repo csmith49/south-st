@@ -1,8 +1,0 @@
-{{ define "main" }}
-    <h2>All Workshops and Invited Talks</h2>
-    <ul>
-        {{ range (where .Data.Pages "Section" "workshop") }}
-            {{ .Render "li" }}
-        {{ end }}
-    </ul>
-{{ end }}

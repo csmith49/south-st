@@ -1,0 +1,7 @@
+<span class="event">
+    {{ if  .Params.link -}}
+        <a href="{{ .Params.link }}">{{ .Params.location_short }} {{ with .Params.role_short }}{{ . }}{{ end }}</a>
+    {{ else }}
+        {{ .Params.location_short }} {{ with .Params.role_short }}{{ . }}{{ end }}
+    {{- end }}
+</span>
