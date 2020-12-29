@@ -21,32 +21,32 @@
                 {{ .Content }}
             </section>
             
-            <section id="publications">
-                {{ $publications := (where .Site.RegularPages "Section" "==" "publication") }}
-                {{ $publicationsCount := len $publications }}
+            <section id="papers">
+                {{ $papers := (where .Site.RegularPages "Section" "==" "papers") }}
+                {{ $papersCount := len $papers }}
             
-                {{ if lt $publicationsCount 11 }}
-                    <h2>Publications</h2>
+                {{ if lt $papersCount 11 }}
+                    <h2>Papers</h2>
                     <ul>
-                        {{ range $publications }}
+                        {{ range $papers }}
                             {{ .Render "card" }}
                         {{ end }}
                     </ul>
                 {{ else }}
-                    {{ $selectedPublications := where $publications ".Params.selected" true }}
-                    <h2>Selected Publications</h2>
+                    {{ $selectedPapers := where $papers ".Params.selected" true }}
+                    <h2>Selected Papers</h2>
                     <ul>
-                        {{ range first 10 $selectedPublications }}
+                        {{ range first 10 $selectedPapers }}
                             {{ .Render "card" }}
                         {{ end }}
                     </ul>
-                    <a href="/publication/">All publications</a>
+                    <a href="/papers/">All papers</a>
                 {{ end }}
             </section>
 
             <!-- WORKSHOP PRESENTATIONS -->
             <section id="workshops">
-                {{ $workshops := (where .Site.RegularPages "Section" "==" "workshop") }}
+                {{ $workshops := (where .Site.RegularPages "Section" "==" "workshops") }}
                 {{ $workshopsCount := len $workshops }}
         
                 {{ if lt $workshopsCount 6 }}
