@@ -26,10 +26,6 @@ body {
   font-family: "Fira Sans", sans-serif;
   font-weight: lighter;
 }
-.header h1:before {
-  content: "# ";
-  color: #c5050c;
-}
 
 .container {
   max-width: 500px;
@@ -55,10 +51,6 @@ body {
 .content h2 {
   font-family: "Fira Sans", sans-serif;
   font-weight: lighter;
-}
-.content h2:before {
-  content: "## ";
-  color: #c5050c;
 }
 
 #about a {
